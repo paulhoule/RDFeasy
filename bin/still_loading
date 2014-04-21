@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# A short shell script with a long comment
+#
+# The grep matches if there is a line with nothing but a 0 on it,  which
+# is what we get if there are no files in an undone state;  with the -c
+# option we count how many we zeros we see,  this should be 0 or 1.  The
+# awk statement does logical negation so we get '1' if there are files
+# left to load or '0' if there are not or something else if there are not
+# files to load
+
 echo "select count(*) from db.dba.load_list where ll_state < 2;" \
  | isql \
- | nl
+ | grep -c '^0$'
+ | awk '{print 1-$1}' 
