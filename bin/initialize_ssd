@@ -9,7 +9,6 @@ sudo service virtuoso stop
 cd /usr/local/virtuoso-opensource/
 sudo mv var var.orig
 sudo mkdir var
-sudo parted /dev/xvdb
 sudo mkfs.ext4 /dev/xvdb
 sudo mount /dev/xvdb var
 sudo cp -r var.orig/* var
