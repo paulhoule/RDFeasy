@@ -1,0 +1,2 @@
+isql << CMD
+   select * from db.dba.load_list;
