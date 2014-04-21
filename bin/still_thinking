@@ -1,0 +1,4 @@
+#!/bin/bash
+
+awk '{print ($1>0.05) ? 1 : 0}' < /proc/loadavg
+
