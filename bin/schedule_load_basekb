@@ -1,0 +1,3 @@
+#!/bin/sh
+
+schedule_load $1 http://rdf.basekb.com/graph/BaseKB
