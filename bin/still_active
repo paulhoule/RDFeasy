@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export A = `still_loading`
-export B = `still_thinking`
+export A=`still_loading`
+export B=`still_thinking`
 
 expr $A \| $B
