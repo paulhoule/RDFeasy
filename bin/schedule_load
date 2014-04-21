@@ -10,5 +10,5 @@ export DIR=$1
 export GRAPH=$2
 
 export DIR=$(cd $DIR;pwd)
-echo "ld_dir('$1','*.gz','$2')" | isql
+echo "ld_dir('$1','*.gz','$2');" #  | isql
 
