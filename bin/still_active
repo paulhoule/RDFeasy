@@ -1,6 +1,6 @@
 #!/bin/sh
 
 $A=`still_loading`
-$B=`still_thinking'
+$B=`still_thinking`
 
 expr $A \| $B
