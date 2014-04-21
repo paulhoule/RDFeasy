@@ -1,0 +1,3 @@
+export PATH=/usr/local/virtuoso-opensource/bin:$PATH
+export PATH=$HOME/RDFeasy/bin:$PATH
+
