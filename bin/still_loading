@@ -11,5 +11,5 @@
 
 echo "select count(*) from db.dba.load_list where ll_state < 2;" \
  | isql \
- | grep -c '^0$'
+ | grep -c '^0$' \
  | awk '{print 1-$1}' 
