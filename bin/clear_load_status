@@ -1,0 +1,3 @@
+isql << CMD
+   delete from db.dba.load_list;
+CMD
