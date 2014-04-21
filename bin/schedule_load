@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#
+# argument one is the relative or absolute path to the directory we load from
+# argument two is the graph we want to load data into
+#
+#
+
+export DIR=$1
+export GRAPH=$2
+
+export DIR=$(cd $DIR;pwd)
+echo "ld_dir('$1','*.gz','$2')" | isql
+
