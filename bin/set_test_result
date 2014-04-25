@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export RESULT_FILE=$HOME/result_text
+
+echo $1 > $RESULT_FILE
+

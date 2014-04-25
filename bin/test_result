@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export RESULT_FILE=$HOME/result_text
+
+if [ ! -e $RESULT_FILE ]
+  then 
+    echo "1" > $RESULT_FILE
+fi
+
+cat $RESULT_FILE

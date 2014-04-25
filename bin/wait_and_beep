@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while [ `$1` -gt 0 ]
+do
+   echo -n "."
+   sleep 20
+done
+
+echo
+echo Task monitored by $1 complete
+
+for a in `seq 20` 
+do
+   beep
+   sleep 2
+done;
