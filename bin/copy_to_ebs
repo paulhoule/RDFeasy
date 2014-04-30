@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo mkfs.ext4 /dev/xvdf
+sudo mkdir /mnt/database
+sudo mount /dev/xvdf /mnt/database
+sudo chown -R ubuntu /mnt/database
+sudo service virtuoso stop
+sleep 30
+time cp -r /usr/local/virtuoso-opensource/var/* /mnt/database
+sudo service virtuoso start
