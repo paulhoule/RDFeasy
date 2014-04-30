@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo _add_ebs_database_to_fstab
