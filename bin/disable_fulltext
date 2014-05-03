@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "DB.DBA.RDF_OBJ_FT_RULE_DEL (null, null, 'ALL');"  | isql &
+

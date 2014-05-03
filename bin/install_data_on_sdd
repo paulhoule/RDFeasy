@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sudo mkfs.ext4 /dev/xvdb
+sudo mount /dev/xvdb /mnt/database
+sudo chown -R ubuntu /mnt/database
+
+sudo service virtuoso stop
+sleep 20
+
+time cp -r /usr/local/virtuoso-opensource/var/* /mnt/database
+sudo umount /mnt/database
+sudo umount /usr/local/virtuoso-opensource/var
+sudo mount /dev/xvdb /usr/local/virtuoso-opensource/var
+sudo service virtuoso start
+

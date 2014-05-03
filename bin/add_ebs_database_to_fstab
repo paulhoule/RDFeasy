@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo $HOME/RDFeasy/bin/_add_ebs_database_to_fstab

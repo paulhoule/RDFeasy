@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo service virtuoso stop
+sleep 20
+sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
+shred -u ~/.*history
+
+sudo halt 
+
