@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl http://localhost:8890/
+curl http://localhost:8890/ > /dev/null
 
 if [ $? == 0 ]
    then
