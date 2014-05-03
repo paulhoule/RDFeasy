@@ -13,7 +13,10 @@ DESC="OpenLink Virtuoso Opensource"
 RUNAS=ubuntu
 DB_USER=dba
 DB_PASSWORD=dba
+ETC_DIR=/etc/virtuoso
+PW_CONFIG=$ETC_DIR/dba_password
 
+test -e PW_CONFIG || DB_PASSWD=`cat $PW_CONFIG`
 test -x $DAEMON || exit 0
 
 set -e
