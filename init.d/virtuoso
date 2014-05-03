@@ -1,0 +1,44 @@
+#!/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+TOPDIR="/usr/local/virtuoso-opensource"
+DAEMON=$TOPDIR/bin/virtuoso-t
+CONFIG_DIR="/usr/local/virtuoso-opensource/var/lib/virtuoso/db/"
+ISQL_BIN=$TOPDIR/bin/isql
+# [path to virtuoso-t, starting from virtuoso.ini directory]
+EXEC_STRING="../../../../bin/virtuoso-t"
+PARAMETERS="+configfile /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.ini"
+
+NAME=virtuoso
+DESC="OpenLink Virtuoso Opensource"
+RUNAS=ubuntu
+DB_USER=dba
+DB_PASSWORD=dba
+
+test -x $DAEMON || exit 0
+
+set -e
+
+case "$1" in
+start)
+echo -n "Starting $DESC: $NAME "
+# I cd to that directory so the logfiles are written there
+cd $CONFIG_DIR
+# PARAMETERS could be omitted
+sudo -u $RUNAS $EXEC_STRING $PARAMETERS
+echo "."
+;;
+stop)
+echo -n "Stopping $DESC: $NAME "
+sudo $ISQL_BIN localhost:1111 $DB_USER $DB_PASSWORD -K
+echo "."
+;;
+*)
+N=/etc/init.d/$NAME
+# echo "Usage: $N {start|stop|restart|reload|force-reload}" >&2
+echo "Usage: $N {start|stop|restart|force-reload}" >&2
+exit 1
+;;
+esac
+
+exit 0
+
