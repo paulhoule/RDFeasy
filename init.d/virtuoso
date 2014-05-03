@@ -16,7 +16,7 @@ DB_PASSWORD=dba
 ETC_DIR=/etc/virtuoso
 PW_CONFIG=$ETC_DIR/dba_password
 
-test -e PW_CONFIG && DB_PASSWORD=`cat $PW_CONFIG`
+test -e $PW_CONFIG && DB_PASSWORD=`cat $PW_CONFIG`
 test -x $DAEMON || exit 0
 
 set -e
