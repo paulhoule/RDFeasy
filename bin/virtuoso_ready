@@ -1,0 +1,10 @@
+#!/bin/bash
+
+curl http://localhost:8890/
+
+if [ $? == 0 ]
+   then
+      echo 1
+   else
+      echo 0
+fi
