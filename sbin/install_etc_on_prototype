@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo cp $HOME/RDFeasy/init.d/* /etc/init.d/
+sudo cp $HOME/RDFeasy/etc/rc.local /etc/rc.local
+
