@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "rdf_loader_run();"  | isql &
+echo "rdf_loader_run();"  | sql &
 

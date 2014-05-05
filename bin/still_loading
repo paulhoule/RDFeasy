@@ -10,6 +10,6 @@
 # files to load
 
 echo "select count(*) from db.dba.load_list where ll_state < 2;" \
- | isql \
+ | sql \
  | grep -c '^0$' \
  | awk '{print 1-$1}' 
