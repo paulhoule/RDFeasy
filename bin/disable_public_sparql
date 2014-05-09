@@ -1,0 +1,9 @@
+#!/bin/sh
+
+sql <<HERE
+DB.DBA.VHOST_REMOVE (
+	 lhost=>'*ini*',
+	 vhost=>'*ini*',
+	 lpath=>'/sparql'
+);
+HERE
