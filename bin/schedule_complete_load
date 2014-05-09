@@ -1,0 +1,18 @@
+cd /mnt/data/sieved
+
+schedule_load_basekb a
+schedule_load_basekb description
+schedule_load_basekb dotdot
+schedule_load_basekb key
+schedule_load_basekb keyNs
+schedule_load_basekb label
+schedule_load_basekb links
+schedule_load_basekb literals
+schedule_load_basekb name
+schedule_load_basekb notability
+schedule_load_basekb notableForPredicate
+schedule_load_basekb text
+schedule_load_basekb webpages
+
+cd /mnt/data
+schedule_load_eye local
