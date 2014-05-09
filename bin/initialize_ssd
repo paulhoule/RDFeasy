@@ -5,8 +5,13 @@
 # of user data but not of system data) onto the SSD
 #
 
-sudo service virtuoso stop
+
 cd /usr/local/virtuoso-opensource/
+
+[ -x var.orig ] && exit
+
+sudo service virtuoso stop
+sleep 20
 sudo mv var var.orig
 sudo mkdir var
 sudo mkfs.ext4 /dev/xvdb
