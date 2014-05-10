@@ -7,6 +7,7 @@ sleep 20
 sudo rm /etc/virtuoso/password_changed
 sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
 shred -u ~/.*history
-
+shred ~/.ssh/authorized_keys
+sudo shred /root/.ssh/authorized_keys
 sudo halt 
 
