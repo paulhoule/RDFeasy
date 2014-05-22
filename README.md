@@ -5,4 +5,4 @@ RDFeasy
 
 Software for packaging RDF data on Virtual Machines.
 
-[See Wiki Documentation](/paulhoule/RDFeasy/wiki/)
+[See Wiki Documentation](https://github.com/paulhoule/RDFeasy/wiki)
