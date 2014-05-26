@@ -6,3 +6,7 @@ RDFeasy
 Software for packaging RDF data on Virtual Machines.
 
 [See Wiki Documentation](https://github.com/paulhoule/RDFeasy/wiki)
+
+RDFEasy products in Amazon Web Services
+
+[https://aws.amazon.com/marketplace/pp/B00KDO5IFA/](RDFEasy :BaseKB Gold Compact)
