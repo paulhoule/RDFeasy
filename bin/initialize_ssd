@@ -14,7 +14,7 @@ sudo service virtuoso stop
 sleep 20
 sudo mv var var.orig
 sudo mkdir var
-sudo mkfs.ext4 /dev/xvdb
+sudo umount /dev/xvdb
 sudo mount /dev/xvdb var
 sudo cp -r var.orig/* var
 sudo chown -R ubuntu var
