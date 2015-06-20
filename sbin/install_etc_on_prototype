@@ -2,4 +2,6 @@
 
 sudo cp $HOME/RDFeasy/init.d/* /etc/init.d/
 sudo cp $HOME/RDFeasy/etc/rc.local /etc/rc.local
-
+sudo update-rc.d virtuoso defaults
+sudo service virtuoso start
+wait_until virtuoso_ready
