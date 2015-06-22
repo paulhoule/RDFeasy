@@ -13,8 +13,20 @@ cd /usr/local/virtuoso-opensource/
 sudo service virtuoso stop
 sleep 20
 sudo mv var var.orig
+
+
+#
+# sometimes it comes up mounted on /mnt,  somtimes
+# it does not
+#
+
 sudo mkdir var
-sudo umount /dev/xvdb
+if grep -qs '/dev/xvdb' /proc/mounts; then
+    sudo umount /dev/xvdb
+fi
+
+sudo mkfs.ext4 /dev/xvdb
+
 sudo mount /dev/xvdb var
 sudo cp -r var.orig/* var
 sudo chown -R ubuntu var
