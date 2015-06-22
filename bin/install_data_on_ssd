@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if grep -qs '/dev/xvdb' /proc/mounts; then
+    sudo umount /dev/xvdb
+fi
+
 sudo mkfs.ext4 /dev/xvdb
 sudo mount /dev/xvdb /mnt/database
 sudo chown -R ubuntu /mnt/database
