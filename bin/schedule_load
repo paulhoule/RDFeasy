@@ -11,4 +11,4 @@ export GRAPH=$2
 
 export DIR=$(cd $DIR;pwd)
 echo "ld_dir('$DIR','*.gz','$GRAPH');"  | sql
-echo "ld_dir('$DIR','*.bz2','$GRAPH');"  | sql
+
