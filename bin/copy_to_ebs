@@ -7,4 +7,3 @@ sudo chown -R ubuntu /mnt/database
 sudo service virtuoso stop
 sleep 30
 time cp -r /usr/local/virtuoso-opensource/var/* /mnt/database
-sudo service virtuoso start
