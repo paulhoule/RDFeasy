@@ -1,9 +1,5 @@
 #!/bin/bash
 
-disable_public_sparql
-sudo service virtuoso stop
-sleep 20
-
 sudo rm /etc/virtuoso/password_changed
 sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
 shred -u ~/.*history
