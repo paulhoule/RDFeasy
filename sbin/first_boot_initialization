@@ -1,6 +1,5 @@
 #!/bin/bash
 
-logger running change_password_at_boot
 
 USER_DIR=/home/ubuntu
 PW_FILE=/etc/virtuoso/dba_password
@@ -8,12 +7,17 @@ PW_CHANGED=/etc/virtuoso/password_changed
 
 source $USER_DIR/RDFeasy/lib/myBashRc
 
-logger testing if pasword_changed flag is set
-
 test -e $PW_CHANGED && exit 0
 
-logger "password_changed flag was not; waiting for virtuoso_ready"
+logger "password_changed flag was not set;  doing first boot initialization"
+warm_volume /dev/xvdf
+logger "volume warmed; starting virtuoso"
+
+update-rc.d virtuoso defaults
+service virtuoso start
+
 wait_until virtuoso_ready
+
 logger "virtuoso_ready detected; changing password" 
 
 change_password `generate_dba_password`
