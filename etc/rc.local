@@ -1,5 +1,4 @@
 #!/bin/sh
 
-/home/ubuntu/RDFeasy/sbin/change_password_at_boot
-
+/home/ubuntu/RDFeasy/sbin/first_boot_initialization
 exit 0
