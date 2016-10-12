@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+
+VOLUME=$1
+
+sudo umount $VOLUME
+sudo dd if=$VOLUME of=$VOLUME conv=notrunc bs=1M
+sudo mount $VOLUME
