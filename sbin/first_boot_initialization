@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
 USER_DIR=/home/ubuntu
 PW_FILE=/etc/virtuoso/dba_password
 PW_CHANGED=/etc/virtuoso/password_changed
 
 source $USER_DIR/RDFeasy/lib/myBashRc
+chmod +x $USER_DIR/RDFeasy/bin/*
 
 test -e $PW_CHANGED && exit 0
 
