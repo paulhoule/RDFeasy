@@ -6,9 +6,10 @@ set -e
 
 VOLUME=$1
 
-logger "unmounting volume $VOLUME"
-umount $VOLUME
+# logger "unmounting volume $VOLUME"
+# umount $VOLUME
 logger "about to warm $VOLUME with fio"
 logger `fio --filename=/dev/xvdf --rw=randread --bs=128k --iodepth=32 --ioengine=libaio --direct=1 --name=volume-initialize`
-logger "remounting volume $VOLUME"
-mount $VOLUME
+
+# logger "remounting volume $VOLUME"
+# mount $VOLUME
