@@ -10,7 +10,9 @@ source $USER_DIR/RDFeasy/lib/myBashRc
 test -e $PW_CHANGED && exit 0
 
 logger "password_changed flag was not set;  doing first boot initialization"
-warm_volume /dev/xvdf
+logger "about to warm volume /dev/xvdf"
+warm_volume /dev/xvdf &> /etc/warm_output
+logger "warm volume completed with exit code $?"
 logger "volume warmed; starting virtuoso"
 
 update-rc.d virtuoso defaults
