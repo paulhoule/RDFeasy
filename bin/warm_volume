@@ -1,8 +1,9 @@
 #!/bin/bash
 #
+# assumes we are running as root
 
 VOLUME=$1
 
-sudo umount $VOLUME
-sudo dd if=$VOLUME of=$VOLUME conv=notrunc bs=1M
-sudo mount $VOLUME
+umount $VOLUME
+fio --filename=/dev/xvdf --rw=randread --bs=128k --iodepth=32 --ioengine=libaio --direct=1 --name=volume-initialize
+mount $VOLUME
