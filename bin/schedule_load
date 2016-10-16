@@ -2,7 +2,7 @@
 
 #
 # argument one is the relative or absolute path to the directory we load from
-# argument two is the graph we want to load data into
+# argument two is the graph we want to load data into,  must end in / or #
 #
 #
 
@@ -10,5 +10,10 @@ export DIR=$1
 export GRAPH=$2
 
 export DIR=$(cd $DIR;pwd)
-echo "ld_dir('$DIR','*.gz','$GRAPH');"  | sql
+cd $DIR
+ for x in *.gz ; do
+    y="${x%.gz}.bz2"
+    echo "ld_dir('$DIR','$x','$GRAPH$y');" | sql
+ done
+ 
 
